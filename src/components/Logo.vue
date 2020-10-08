@@ -1,14 +1,15 @@
 <template>
   <g-link to="/" class="logo" title="Back to home">
+   
     <transition name="theme">
-      <div v-if="color == 'dark'">
-        <g-image src="~/assets/img/logo-bright.svg" alt="logo" />
-      </div>
+      <span v-if="color == 'dark'" class="dark">
+         Code Docs
+      </span>
     </transition>
     <transition name="theme">
-      <div v-if="color == 'bright'">
-        <g-image src="~/assets/img/logo-dark.svg" alt="logo" />
-      </div>
+      <span v-if="color == 'bright'" class="bright">
+         Code Docs
+      </span>
     </transition>
   </g-link>
 </template>
@@ -32,6 +33,11 @@ export default {
   color: $textBright;
   position: relative;
   perspective: 200px;
+  font-size: 2em;
+
+  .dark {
+    color: white;
+  }
 
   div {
     height: 40px;
