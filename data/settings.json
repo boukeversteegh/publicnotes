@@ -1,6 +1,15 @@
 {
   "sidebar": [
     {
+      "section": "Programming Languages",
+      "topics": [
+        {
+          "title": "Dart",
+          "slug": "dart"
+        }
+      ]
+    },
+    {
       "section": "Introduction",
       "topics": [
         {

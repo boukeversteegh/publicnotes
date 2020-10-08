@@ -16,8 +16,8 @@ function addStyleResource (rule) {
 }
 
 module.exports = {
-  siteName: 'Jamdocs',
-  siteUrl: 'https://jamdocs.samuelhorn.com',
+  siteName: 'Code Notes',
+  siteUrl: 'https://personalnotes.netlifyapp.com',
   templates: {
     Doc: '/:slug',
   },
