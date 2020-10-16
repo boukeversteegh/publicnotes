@@ -675,9 +675,18 @@ Avoid `stdout.add` or `print`
 ### How to test exceptions?
 
 ```dart
-expect(() => someFunction, throwsA(MyException));
+expect(() => someFunction, throwsA(isA<MyException());
+expect(() => someFunction, throwsA(isInstanceOf<MyException());
 expect(() => someFunction, throwsA((e) => e is MyException && e.flag));
 ```
+
+Not like this:
+
+```dart
+expect(() => someFunction, throwsA(MyException));
+```
+
+
 
 ## Building and running
 
@@ -934,6 +943,32 @@ It's also not the name of the package when you import (e.g. `import 'package:foo
 Unclear how I got it to work in intellij, but you don't need a package in pubspec.
 
 Maybe it was `pub global activate coverage`.
+
+### How to run observatory without authentication?
+
+Add the following VM flag:
+
+- ` --disable-service-auth-codes`
+
+### How can I enable the profiler at the start of the script?
+
+Pass `--profiler` as a VM flag.
+
+```bash
+dart --profiler
+```
+
+### How can I increase the sample rate of the profiler?
+
+```bash
+dart --profile_period=50
+```
+
+## Pub
+
+### How can I deinstall a globally installed package with pub?
+
+pub doesn't have a concept of uninstalling global packages.
 
 ## Issues
 
